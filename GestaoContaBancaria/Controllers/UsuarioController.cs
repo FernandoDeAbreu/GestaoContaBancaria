@@ -22,7 +22,7 @@ namespace GestaoContaBancaria.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
+        [AllowAnonymous]
         [Produces("application/json")]
         [HttpPost("/api/AdicionaUsuario")]
         public async Task<IActionResult> AdicionarUsuario([FromBody] Login login)

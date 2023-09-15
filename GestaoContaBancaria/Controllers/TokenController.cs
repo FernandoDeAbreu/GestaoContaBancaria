@@ -34,7 +34,7 @@ namespace GestaoContaBancaria.Controllers
             if (result.Succeeded)
             {
                 var token = new TokenJWTBuilder()
-                    .AddSecurityKey(JwtSecurityKey.Create("Secret_Key-12345678"))
+                  .AddSecurityKey(JwtSecurityKey.Create("Secret_Key-12345678"))
                  .AddSubject("Fernando Abreu")
                  .AddIssuer("Teste.Securiry.Bearer")
                  .AddAudience("Teste.Securiry.Bearer")

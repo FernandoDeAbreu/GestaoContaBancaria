@@ -2,9 +2,7 @@
 using Entities.Entities;
 using Infra.DBContext;
 using Infra.Repository.Generics;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace Infra.Repository
 {
@@ -16,6 +14,7 @@ namespace Infra.Repository
         {
             _OptionsBuilder = new DbContextOptions<AppDBContext>();
         }
+
         public async Task<IList<ContaBancaria>> ObterExtratoConta(int Id)
         {
             using (var saldo = new AppDBContext(_OptionsBuilder))
@@ -33,8 +32,8 @@ namespace Infra.Repository
             {
                 return await saldo.ContaBancaria
                     .AsNoTracking()
-                    .Where(x => x.UsuarioId.Equals(id)) 
-                    .OrderByDescending(x => x.Id)   
+                    .Where(x => x.UsuarioId.Equals(id))
+                    .OrderByDescending(x => x.Id)
                     .FirstOrDefaultAsync();
             }
         }
