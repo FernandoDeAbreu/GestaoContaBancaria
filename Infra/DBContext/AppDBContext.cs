@@ -1,9 +1,10 @@
 ﻿using Entities.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra.DBContext
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext<Usuario>
     {
         public AppDBContext(DbContextOptions options) : base(options)
         {
