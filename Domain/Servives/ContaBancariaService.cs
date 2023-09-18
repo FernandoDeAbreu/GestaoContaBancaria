@@ -20,7 +20,9 @@ namespace Domain.Servives
 
             var saldoAtual = await _contaBancaria.ObterSaldoConta(contaBancaria.Id);
 
-            contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
+            if (saldoAtual != null)
+                contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
+
             await _contaBancaria.Add(contaBancaria);
         }
 
@@ -33,7 +35,9 @@ namespace Domain.Servives
 
             var saldoAtual = await _contaBancaria.ObterSaldoConta(contaBancaria.Id);
 
-            contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
+            if (saldoAtual != null)
+                contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
+            
             await _contaBancaria.Add(contaBancaria);
         }
 
@@ -44,7 +48,8 @@ namespace Domain.Servives
 
             var saldoAtual = await _contaBancaria.ObterSaldoConta(contaBancaria.Id);
 
-            contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
+            if (saldoAtual != null)
+                contaBancaria.Saldo = saldoAtual.Saldo + contaBancaria.Valor;
 
             await _contaBancaria.Add(contaBancaria);
         }

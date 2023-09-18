@@ -1,11 +1,13 @@
 ﻿using Domain.Interfaces.Services;
 using Entities.Entities;
 using GestaoContaBancaria.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoContaBancaria.Controllers
 {
+  
     [Route("api/[controller]")]
     [ApiController]
     public class ContaBancariaController : ControllerBase
